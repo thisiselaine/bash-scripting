@@ -1,0 +1,16 @@
+You can invoke the script by 'sh scriptname' or 'bash scriptname.'
+
+Or, make the script itself directly executable with a chmod. 
+
+Your options:
+chmod 555 scriptname (gives everyone read/execute permission)
+chmod +rx scriptname (same as above)
+chmod u+rx scriptname (gives only the owner read/execute permission)
+
+Test by running './scriptname'. 
+
+You would likely want to move the script to /usr/local/bin (as root)
+to make the script available to all other users as a systemwide exe.
+
+The script can then be invoked by simply typing scriptname [ENTER]
+from the command line.

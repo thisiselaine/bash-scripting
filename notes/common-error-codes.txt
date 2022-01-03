@@ -1,0 +1,10 @@
+Common error status codes:
+0 = indicates successful execution.
+1 = used to catch all general errors.
+2 = indicates teh abuse of shell built-ins (missing keyword, no such file or directory)
+126 = generates when the command is unable to execute (permission problem, key not available)
+127 = generates for command path problem (command not found)
+130 = fatal error (script terminated by Ctrl+C)
+255 = exit code out of range
+
+exit $? can be used to obtain the execution result.
