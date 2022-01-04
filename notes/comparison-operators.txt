@@ -1,0 +1,54 @@
+INTEGER COMPARISON
+-eq: is equal to 
+if [ "$a" -eq "$b" ]
+
+-ne: is not equal to
+if [ "$a" -ne "$b" ]
+
+-gt: is greater than
+if [ "$a" -gt "$b" ]
+
+-ge: is greater than or equal to
+if [ "$a" -ge "$b" ]
+
+-lt: is less than
+if [ "$a" -lt "$b" ]
+
+-le: is less than or equal to
+if [ "$a" -le "$b" ]
+
+The below operators need to be placed in DOUBLE parentheses.
+<: is less than
+(("$a" < "$b"))
+
+<=: is less than or equal to
+(("$a" <= "$b"))
+
+>: is greater than
+(("$a" > "$b"))
+
+>=: is greater thna or equal to
+(("$a" >= "$b"))
+
+STRING COMPARISON
+=: is equal to
+if [ "$a" = "$b" ]
+There MUST be whitespace framing the =.
+
+==: is equal to
+Behaves differently with double brackets
+[[ $a == z* ]]	# True if $a starts with a "z" (pattern matching)
+[[ $a == "z*" ]]	# True if $a is equal to z* (literal matching)
+
+[ $a == z* ] # File globbing and word splitting take place
+[ $a == z* ] # True if $a is equal to z* (literal matching)
+
+See <, <=, >, >= for string comparison. Behaves the same except determines order based on ASCII alphabetical value.
+
+-z: the string is null, i.e. has zero length
+if [ -z "$String" ]
+then
+	echo "\$String is null."
+
+-n: string is not null
+(The -n test requires that the string be quoted within the test brackets.)
